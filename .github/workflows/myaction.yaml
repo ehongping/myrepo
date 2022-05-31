@@ -18,4 +18,12 @@ jobs:
         echo `df -h`" Disk info:"`fdisk -l`" \nUser info:"`who`" IPaddr: "`ip a`
         echo "docker version: "`docker version`
         echo "ping test: "`ping -c 1 www.baidu.com`
-        echo "DOCKER_USERNAME: "${{ secrets.DOCKER_USERNAME }}
+        echo "env:"`env`
+      - name: docker pull
+        run: |
+          docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
+          docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 276912053/nfs-subdir-external-provisioner:v4.0.2
+          docker push 276912053/nfs-subdir-external-provisioner:v4.0.2
+      - name: docker images
+        run: docker images
+
