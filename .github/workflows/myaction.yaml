@@ -16,3 +16,5 @@ jobs:
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
         echo "hThis is "`hostname`" version is:"`uname -a`
         echo `df -h`" Disk info:"`fdisk -l`" \nUser info:"`who`" IPaddr: "`ip a`
+        echo "docker version: "`docker version`
+        echo "ping test: "`ping -c 1 www.baidu.com`
