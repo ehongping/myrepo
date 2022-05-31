@@ -7,11 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Print a greeting
-      env:
-        MY_VAR: Hi there! My name is
-        FIRST_NAME: Mona
-        MIDDLE_NAME: The
-        LAST_NAME: Octocat
       run: |
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
         echo "hThis is "`hostname`" version is:"`uname -a`
@@ -20,10 +15,10 @@ jobs:
         echo "ping test: "`ping -c 1 www.baidu.com`
         echo "env:"`env`
     - name: docker pull
-        run: |
+      run: |
           docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
           docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 276912053/nfs-subdir-external-provisioner:v4.0.2
           docker push 276912053/nfs-subdir-external-provisioner:v4.0.2
     - name: docker images
-        run: docker images
+      run: docker images
 
