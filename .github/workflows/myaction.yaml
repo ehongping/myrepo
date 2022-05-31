@@ -19,11 +19,11 @@ jobs:
         echo "docker version: "`docker version`
         echo "ping test: "`ping -c 1 www.baidu.com`
         echo "env:"`env`
-      - name: docker pull
+    - name: docker pull
         run: |
           docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
           docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 276912053/nfs-subdir-external-provisioner:v4.0.2
           docker push 276912053/nfs-subdir-external-provisioner:v4.0.2
-      - name: docker images
+    - name: docker images
         run: docker images
 
