@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: test secret
         env:
-          DOCKER_TEST_SECRET: ${{ DOCKER_TEST}}
-          REPO_USERNAME_SECRET: ${{ REPO_USERNAME}}
+          DOCKER_TEST_SECRET: ${{ secrets.DOCKER_TEST}}
+          REPO_USERNAME_SECRET: ${{ secrets.REPO_USERNAME}}
         run: |
           echo "DOCKER_TEST: "$DOCKER_TEST_SECRET
           echo "REPO_USERNAME: "$REPO_USERNAME_SECRET
