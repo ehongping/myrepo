@@ -2,19 +2,15 @@ name: ci
 on:
   push:
 #    branches: main
-
 jobs:
-  login:
+  docker-image-transfer:
     runs-on: ubuntu-latest
     steps:
-      - name: test secret
-        env:
-          REPO_USERNAME_SECRET: ${{ secrets.REPO_USERNAME }}
+      - name: run linux command
         run: |
-          echo "env: "`env`
-          echo "REPO_USERNAME: "${REPO_USERNAME_SECRET}
-      -
-        name: Login to Docker Hub
+          echo "Hostname: "`hostname`
+          echo "Kernel info: "`uname -a`  
+      - name: Login to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
@@ -24,5 +20,5 @@ jobs:
           docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
           docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 276912053/nfs-subdir-external-provisioner:v4.0.2
           docker push 276912053/nfs-subdir-external-provisioner:v4.0.2
-      - name: docker images
+      - name: query docker images
         run: docker images
