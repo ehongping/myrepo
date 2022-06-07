@@ -17,8 +17,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker pull
         run: |
-          docker pull k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2
-          docker tag k8s.gcr.io/sig-storage/nfs-subdir-external-provisioner:v4.0.2 276912053/nfs-subdir-external-provisioner:v4.0.2
-          docker push 276912053/nfs-subdir-external-provisioner:v4.0.2
+          docker pull gcr.io/distroless/static:latest
+          docker tag gcr.io/distroless/static:latest 276912053/distroless/static:latest
+          docker push 276912053/distroless/static:latest
       - name: query docker images
         run: docker images
