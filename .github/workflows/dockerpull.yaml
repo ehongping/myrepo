@@ -17,8 +17,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker pull
         run: |
-          docker pull gcr.io/distroless/static:latest
-          docker tag gcr.io/distroless/static:latest 276912053/distroless-static:latest
-          docker push 276912053/distroless-static:latest
+          docker pull docker pull gcr.io/distroless/java
+          docker tag docker pull gcr.io/distroless/java 276912053/distroless-java
+          docker push 276912053/distroless-java
       - name: query docker images
         run: docker images
