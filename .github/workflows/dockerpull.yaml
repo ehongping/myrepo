@@ -18,7 +18,7 @@ jobs:
       - name: docker pull
         run: |
           docker pull gcr.io/distroless/static:latest
-          docker tag gcr.io/distroless/static:latest 276912053/distroless/static:latest
-          docker push 276912053/distroless/static:latest
+          docker tag gcr.io/distroless/static:latest 276912053/distroless-static:latest
+          docker push 276912053/distroless-static:latest
       - name: query docker images
         run: docker images
