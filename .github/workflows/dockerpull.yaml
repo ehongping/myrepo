@@ -18,7 +18,7 @@ jobs:
       - name: docker pull
         run: |
           docker pull gcr.io/distroless/java
-          docker tag gcr.io/distroless/java ${{secrets.REPONAME}}/distroless-java
-          docker push ${{secrets.REPONAME}}/distroless-java
+          docker tag gcr.io/distroless/java ${{secrets.DOCKERHUB_REPONAME}}/distroless-java
+          docker push ${{secrets.DOCKERHUB_REPONAME}}/distroless-java
       - name: query docker images
         run: docker images
