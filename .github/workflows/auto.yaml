@@ -23,4 +23,8 @@ jobs:
           sh glibc4alpine.sh
       - name: query docker images
         run: docker images
+      - name: docker push
+        run: |
+          docker commit busybox ${{secrets.DOCKERHUB_REPONAME}}/busybox-glibc
+          docker push ${{secrets.DOCKERHUB_REPONAME}}/busybox-glibc
 

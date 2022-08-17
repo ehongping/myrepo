@@ -6,6 +6,3 @@ wget -O download/glibc-2.35-r0.apk https://github.com/sgerrand/alpine-pkg-glibc/
 
 docker run -d --name busybox busybox sleep infinity
 docker cp download busybox:/
-docker commit busybox ${{secrets.DOCKERHUB_REPONAME}}/busybox-glibc
-docker push ${{secrets.DOCKERHUB_REPONAME}}/busybox-glibc
-
