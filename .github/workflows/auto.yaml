@@ -21,6 +21,6 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker retag k8s image
         run: |
-          bash k8s-image-retag.sh
+          bash rook-image-retag.sh
       - name: query docker images
         run: docker images
