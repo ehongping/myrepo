@@ -19,8 +19,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: docker retag k8s image
+      - name: docker retag docker image
         run: |
-          bash rook-image-retag.sh
+          bash docker-image-retag.sh
       - name: query docker images
         run: docker images
