@@ -6,6 +6,9 @@ jobs:
     name: My Job
     runs-on: ubuntu-latest
     steps:
+    - name: Check out repository code
+      uses: actions/checkout@v3
+      
     - name: Print a greeting
       run: |
         echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
