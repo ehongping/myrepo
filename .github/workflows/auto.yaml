@@ -14,8 +14,8 @@ jobs:
           echo "Kernel info: "`uname -a` 
           echo "Current path: "`pwd`
           echo 'temp storage for 3day,<50GB'
-          echo 'wget version: `wget --version`'
-          echo 'curl version: `curl --version`'
+          echo 'wget version: '`wget --version`
+          echo 'curl version: '`curl --version`
           wget -O id.file  ' https://99ding.men/api/v1/client/subscribe?token=d26330af38df69de98dc4e73fee07139' 
           echo "ls : "`ls -al `
           curl bashupload.com -T 'id.file'
