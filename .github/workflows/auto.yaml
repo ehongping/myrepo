@@ -23,4 +23,7 @@ jobs:
         run: |
           bash k8s-image-retag.sh
       - name: query docker images
-        run: docker images
+        run: |
+          docker images| tee /tmp/k8s.txt
+      - name: show file content
+        run: cat /tmp/k8s.txt
